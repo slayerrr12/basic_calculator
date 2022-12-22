@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style_calc.css" rel="stylesheet">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <div class="calculator">
+        <div id="output" class="text-left-align">23232</div>
+        <div class="text-center keysize keydesign calc-input-keys">7</div>
+        <div class="text-center keysize keydesign calc-input-keys">8</div>
+        <div class="text-center keysize keydesign calc-input-keys">9</div>
+        <div class="text-center keysize keydesign calc-input-keys">+</div>
+        <div class="text-center keysize keydesign calc-input-keys">4</div>
+        <div class="text-center keysize keydesign calc-input-keys">5</div>
+        <div class="text-center keysize keydesign calc-input-keys">6</div>
+        <div class="text-center keysize keydesign calc-input-keys">-</div>
+        <div class="text-center keysize keydesign calc-input-keys">1</div>
+        <div class="text-center keysize keydesign calc-input-keys">2</div>
+        <div class="text-center keysize keydesign calc-input-keys">3</div>
+        <div class="text-center keysize keydesign calc-input-keys">*</div>
+        <div class="text-center keysize keydesign calc-input-keys">0</div>
+        <div class="text-center keysize keydesign calc-input-keys">.</div>
+        <div class="text-center keysize keydesign calc-input-keys">/</div>
+        <div class="text-center keysize keydesign calc-input-keys">=</div>
+        <div class="text-center ac-key calc-input-keys"> AC </div>
+
+
+    </div>
+    <script>
+        let var1 = document.getElementsByClassName("calc-input-keys")
+
+        let var2 = Array.from(var1)
+        let output = document.querySelector("#output")
+
+        var2.forEach(function adding_event(element) {
+
+            element.addEventListener("click", function theEvent() {
+
+                if (element.innerText === "=") {
+
+                    output.innerText = eval(output.innerText)
+
+                }
+                if (element.innerText === "AC") {
+
+                    output.innerText = ""
+
+                }
+                else {
+                    output.innerText = output.innerText + element.innerText
+                }
+
+            })
+
+
+        });
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
